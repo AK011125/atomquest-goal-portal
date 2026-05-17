@@ -1,4 +1,23 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+
+const goals = [
+  {
+    title: "Increase Sales Revenue",
+    progress: 80,
+    status: "On Track",
+  },
+  {
+    title: "Reduce Customer Response Time",
+    progress: 60,
+    status: "In Progress",
+  },
+  {
+    title: "Complete AI Integration",
+    progress: 95,
+    status: "Almost Done",
+  },
+];
 
 export default function EmployeePage() {
   return (
@@ -7,42 +26,31 @@ export default function EmployeePage() {
         Employee Dashboard
       </h1>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        <Card className="bg-zinc-900 border-zinc-800">
-          <CardContent className="p-6">
-            <h2 className="text-lg text-zinc-400">
-              Goals
-            </h2>
+      <div className="grid gap-6">
+        {goals.map((goal, index) => (
+          <Card
+            key={index}
+            className="bg-zinc-900 border-zinc-800"
+          >
+            <CardContent className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-semibold">
+                  {goal.title}
+                </h2>
 
-            <p className="text-5xl font-bold mt-4">
-              5
-            </p>
-          </CardContent>
-        </Card>
+                <span className="text-sm bg-zinc-800 px-3 py-1 rounded-full">
+                  {goal.status}
+                </span>
+              </div>
 
-        <Card className="bg-zinc-900 border-zinc-800">
-          <CardContent className="p-6">
-            <h2 className="text-lg text-zinc-400">
-              Progress
-            </h2>
+              <Progress value={goal.progress} />
 
-            <p className="text-5xl font-bold mt-4 text-green-400">
-              72%
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-zinc-900 border-zinc-800">
-          <CardContent className="p-6">
-            <h2 className="text-lg text-zinc-400">
-              Status
-            </h2>
-
-            <p className="text-5xl font-bold mt-4 text-blue-400">
-              On Track
-            </p>
-          </CardContent>
-        </Card>
+              <p className="mt-4 text-zinc-400">
+                Progress: {goal.progress}%
+              </p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </main>
   );
