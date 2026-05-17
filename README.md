@@ -110,7 +110,7 @@ data/
  ├── mock-data.ts
 🚀 Installation & Setup
 Clone Repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git clone https://github.com/AK011125/atomquest-goal-portal
 Install Dependencies
 npm install
 Run Development Server
