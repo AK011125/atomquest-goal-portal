@@ -5,6 +5,7 @@ A modern enterprise-grade HR-tech performance management platform built for hack
 🌐 Live Demo
 
 AtomQuest Goal Portal Live Demo
+https://hackathon-atomquest-goal-setting-portal.vercel.app/
 
 📌 Project Overview
 
